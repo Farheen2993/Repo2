@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20190926 12:58:23.923" generator="Robot 3.1.2 (Python 2.7.16 on win32)">
+<suite source="C:\Users\farheen.k\Downloads\LQRegression\LQRegression\LQLevel1Regression\Tests\Level1Regression.robot" id="s1" name="Level1Regression">
+<test id="s1-t1" name="C0000 Testcase 1">
+<kw type="setup" name="Begin Web Test" library="BaseSetup">
+<kw name="Open Browser" library="ExtendedSelenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${URL.${ENV}}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20190926 12:58:24.355" level="INFO">Opening browser 'chrome' to base url 'https://loanquality-qa.loanhd.com'</msg>
+<status status="PASS" endtime="20190926 12:58:36.767" starttime="20190926 12:58:24.355"></status>
+</kw>
+<kw name="Set Browser Implicit Wait" library="ExtendedSelenium2Library">
+<doc>Sets current browser's implicit wait in seconds.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<status status="PASS" endtime="20190926 12:58:36.771" starttime="20190926 12:58:36.768"></status>
+</kw>
+<kw name="Maximize Browser Window" library="ExtendedSelenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20190926 12:58:40.922" starttime="20190926 12:58:36.771"></status>
+</kw>
+<status status="PASS" endtime="20190926 12:58:40.922" starttime="20190926 12:58:24.355"></status>
+</kw>
+<kw name="Goto LQ Application" library="LandingPage">
+<kw name="Go To" library="ExtendedSelenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${URL.${ENV}}</arg>
+</arguments>
+<msg timestamp="20190926 12:58:40.924" level="INFO">Opening url 'https://loanquality-qa.loanhd.com'</msg>
+<status status="PASS" endtime="20190926 12:58:43.359" starttime="20190926 12:58:40.923"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="ExtendedSelenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>id=txbLogin</arg>
+</arguments>
+<status status="PASS" endtime="20190926 12:58:43.401" starttime="20190926 12:58:43.360"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20190926 12:58:48.408" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20190926 12:58:48.408" starttime="20190926 12:58:43.401"></status>
+</kw>
+<status status="PASS" endtime="20190926 12:58:48.408" starttime="20190926 12:58:40.923"></status>
+</kw>
+<kw name="Login As Admin" library="LandingPage">
+<kw name="Enter Userid" library="LandingPage">
+<arguments>
+<arg>${ADMIN_USER}</arg>
+</arguments>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${txtbxUserid}</arg>
+<arg>${userid}</arg>
+</arguments>
+<msg timestamp="20190926 12:58:48.408" level="INFO">Typing text 'farheen.k@flatworldsolutions.com' into text field 'id=txbLogin'</msg>
+<status status="PASS" endtime="20190926 12:58:48.598" starttime="20190926 12:58:48.408"></status>
+</kw>
+<status status="PASS" endtime="20190926 12:58:48.598" starttime="20190926 12:58:48.408"></status>
+</kw>
+<kw name="Enter Password" library="LandingPage">
+<arguments>
+<arg>${ADMIN_PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${txtbxPassword}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20190926 12:58:48.599" level="INFO">Typing text 'P@ssW0rd' into text field 'id=txbPassword'</msg>
+<status status="PASS" endtime="20190926 12:58:48.700" starttime="20190926 12:58:48.599"></status>
+</kw>
+<status status="PASS" endtime="20190926 12:58:48.700" starttime="20190926 12:58:48.598"></status>
+</kw>
+<kw name="Click Button" library="ExtendedSelenium2Library">
+<doc>Clicks a button identified by ``locator``.</doc>
+<arguments>
+<arg>${btnLogin}</arg>
+</arguments>
+<msg timestamp="20190926 12:58:48.701" level="INFO">Clicking button 'id=btnLogin_Submit'.</msg>
+<status status="PASS" endtime="20190926 12:58:51.625" starttime="20190926 12:58:48.701"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="ExtendedSelenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${TabAllLoans}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="ExtendedSelenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20190926 12:59:02.105" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20190926 12:59:02.105" starttime="20190926 12:59:01.656"></status>
+</kw>
+<msg timestamp="20190926 12:59:02.105" level="FAIL">ValueError: Element locator '//div[text()='All Loans']' did not match any elements.</msg>
+<status status="FAIL" endtime="20190926 12:59:02.105" starttime="20190926 12:58:51.625"></status>
+</kw>
+<status status="FAIL" endtime="20190926 12:59:02.105" starttime="20190926 12:58:48.408"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="BaseSetup">
+<kw name="Close Browser" library="ExtendedSelenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20190926 12:59:04.331" starttime="20190926 12:59:02.105"></status>
+</kw>
+<status status="PASS" endtime="20190926 12:59:04.331" starttime="20190926 12:59:02.105"></status>
+</kw>
+<status status="FAIL" endtime="20190926 12:59:04.331" critical="yes" starttime="20190926 12:58:24.355">ValueError: Element locator '//div[text()='All Loans']' did not match any elements.</status>
+</test>
+<status status="FAIL" endtime="20190926 12:59:04.337" starttime="20190926 12:58:23.928"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="Level1Regression" pass="0">Level1Regression</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
